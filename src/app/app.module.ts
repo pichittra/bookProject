@@ -14,12 +14,14 @@ import {HttpClientModule} from '@angular/common/http';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import { CategoryComponent } from './components/category/category.component';
+import {TruncatePipe} from './truncate';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontComponent,
-    CategoryComponent
+    CategoryComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

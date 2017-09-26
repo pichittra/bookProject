@@ -3,6 +3,7 @@ import { FrontService } from './services/front.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/forkJoin';
 import { Subscription } from 'rxjs/Rx';
+import {TruncatePipe} from './truncate';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

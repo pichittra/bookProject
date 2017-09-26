@@ -1,3 +1,24 @@
-<p>
-  category works!
-</p>
+<div class="row">
+    <div class="col-sm-3" *ngFor="let book of category.book;let index=index">
+      <div class="card">
+        <div class="card-block" style="height:350px;">
+            <!-- <div class="card-header bg-transparent border-success"> {{book.bookName}} </div> -->
+          <div class="card-body">
+              <img class="card-img-bottom" src="{{book.img}}" style="width:170px;height:200px">
+            </div>
+            <div class="card-footer bg-transparent border-success"> 
+              <span class="textOverflow head-book">{{book.bookName| truncate}}</span><br> 
+              <span class="detail-book">{{book.publisher}} </span><br>
+              <span class="detail-book">Price : {{book.price}} </span><br>
+              <!-- <i class="glyphicons glyphicons-star-empty"></i><br> -->
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <p class="overflow-ellipsis" style="white-space: nowrap;width: 200px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->

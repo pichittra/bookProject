@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FrontService } from '../../services/front.service';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
+import {TruncatePipe} from '../../truncate';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -12,9 +13,8 @@ export class CategoryComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) {
       this.frontService.getCategory(this.route.snapshot.params['categoryId']).subscribe(res => {
-        
         this.category = res;
-        console.log(this.category);
+      //  console.log(this.category);
       })
      }
   ngOnInit() {
