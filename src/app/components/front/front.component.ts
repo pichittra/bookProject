@@ -8,6 +8,7 @@ import { FrontService } from '../../services/front.service';
 export class FrontComponent implements OnInit {
 
   books: any;
+  //category: any=[];
   constructor(private frontService: FrontService) { }
 
   ngOnInit() {
@@ -15,6 +16,13 @@ export class FrontComponent implements OnInit {
       this.books = res;
       console.log(this.books)
     })
+
   }
+  // showCategory(){
+  //   this.frontService.getCategory().subscribe(res => {
+  //     this.category = res;
+  //     console.log(this.category);
+  //   })
+  // }
 
 }

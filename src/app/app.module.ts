@@ -13,11 +13,13 @@ import {HttpClientModule} from '@angular/common/http';
 // import 'uikit/dist/js/uikit.js';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FrontComponent
+    FrontComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
