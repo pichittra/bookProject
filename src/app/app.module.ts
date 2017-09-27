@@ -18,6 +18,7 @@ import {TruncatePipe} from './truncate';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import {DatePickerModule} from 'ng2-datepicker-bootstrap';
+import { FormsModule, ReactiveFormsModule , FormControl  } from '@angular/forms';
 //import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -35,6 +36,12 @@ import {DatePickerModule} from 'ng2-datepicker-bootstrap';
     NgbModule.forRoot(),
     HttpModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FrontService],
   bootstrap: [AppComponent]
