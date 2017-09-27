@@ -23,7 +23,7 @@
         <label for="category.name">Name : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="category.name" value="category.book.name" formControlName="name" placeholder="Name Book" required>
+        <input type="text" class="form-control" name="category.name" value="category.name" formControlName="bookName" placeholder="Name Book" required>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
         <label for="category.publisher">Publisher : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="category.publisher" value="category.book.publisher" formControlName="publisher"
+        <input type="text" class="form-control" name="category.publisher" value="category.publisher" formControlName="publisher"
           placeholder="Name Publisher" required>
       </div>
     </div>
@@ -48,7 +48,7 @@
       <div class="col-md-8">
         <div class="input-group">
           <span class="input-group-addon">Bath</span>
-          <input type="text" class="form-control" name="category.price" value="category.book.price" formControlName="price" required> 
+          <input type="text" class="form-control" name="category.price" value="category.price" formControlName="price" required> 
           <span class="input-group-addon">.00</span>
         </div>
       </div>
@@ -74,7 +74,7 @@
         <label for="category.detail">Detail : </label>
       </div>
       <div class="col-md-8">
-        <textarea class="form-control" name="category.detail" value="category.book.detail" formControlName="detail" rows="5" required></textarea>
+        <textarea class="form-control" name="category.detail" value="category.detail" formControlName="detail" rows="5" required></textarea>
       </div>
     </div>
   </div>
@@ -85,7 +85,7 @@
         <label for="category.quantity">Quantity : </label>
       </div>
       <div class="col-md-8">
-        <input type="number" class="form-control" name="category.quantity" value="category.book.quantity" formControlName="quantity" placeholder="Quantity" required>
+        <input type="number" class="form-control" name="category.quantity" value="category.quantity" formControlName="quantity" placeholder="Quantity" required>
       </div>
     </div>
   </div>
@@ -96,7 +96,7 @@
         <label for="category.img">Image : </label>
       </div>
       <div class="col-md-8">
-        <input type="file" class="form-control-file" name="category.img" value="category.book.img" formControlName="img">
+        <input type="file" class="form-control-file" name="category.img" value="category.img" formControlName="img">
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="col-md-8">
         <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd" name="dp" value="category.book.saleDate" ngbDatepicker #d="ngbDatepicker">
+          <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
           <button class="input-group-addon" (click)="d.toggle()" type="button"> <i class="fa fa-calendar" ></i></button>
 
         </div>
@@ -118,7 +118,7 @@
 
   <div class="row">
     <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary width-button" >Save</button>
+      <button type="submit" class="btn btn-primary width-button">Save</button>
       <button type="reset" class="btn btn-danger width-button">Cancle</button>
     </div>
   </div>
