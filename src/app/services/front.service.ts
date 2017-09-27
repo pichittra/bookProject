@@ -5,6 +5,7 @@ import { Http, Response, Request } from '@angular/http';
 @Injectable()
 export class FrontService {
   book: any;
+  detailBook: any;
 
   constructor(private http: Http) { }
   getMenu(): Observable<any> {
@@ -23,5 +24,9 @@ export class FrontService {
     return this.http.get
     (`http://localhost:3000/category/${categoryId}`)
     .map((res: Response) => res.json());
+  }
+  showDetail(item){
+    this.detailBook = item;
+    console.log(this.detailBook)
   }
 }

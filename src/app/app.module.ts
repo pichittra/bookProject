@@ -15,13 +15,15 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import { CategoryComponent } from './components/category/category.component';
 import {TruncatePipe} from './truncate';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontComponent,
     CategoryComponent,
-    TruncatePipe
+    TruncatePipe,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
