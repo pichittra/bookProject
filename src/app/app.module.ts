@@ -16,6 +16,9 @@ import Icons from 'uikit/dist/js/uikit-icons';
 import { CategoryComponent } from './components/category/category.component';
 import {TruncatePipe} from './truncate';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component';
+import {DatePickerModule} from 'ng2-datepicker-bootstrap';
+//import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,15 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
     FrontComponent,
     CategoryComponent,
     TruncatePipe,
-    BookDetailComponent
+    BookDetailComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [FrontService],
   bootstrap: [AppComponent]

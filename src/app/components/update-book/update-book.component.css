@@ -1,7 +1,9 @@
 .padding {
     padding-left: 15px;
+    color: gray;
+    padding-top: 15px;
 }
 
-h6 {
+label {
     padding-left: 20px;
 }

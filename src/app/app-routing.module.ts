@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FrontComponent } from './components/front/front.component';
 import { CategoryComponent } from './components/category/category.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { UpdateBookComponent } from './components/update-book/update-book.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'detail',
         component: BookDetailComponent
+    },
+    {
+        path: 'updatebook',
+        component: UpdateBookComponent
     }
 ];
 
