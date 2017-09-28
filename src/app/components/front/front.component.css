@@ -1,34 +1,15 @@
-
-
-  
-  /* @media screen and (min-width: 768px) {
-    .carousel-control .icon-prev,
-    .carousel-control .icon-next {
-      width: 30px;
-      height: 30px;
-      margin-top: -15px;
-      margin-left: -15px;
-      font-size: 30px;
-    }
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    height: 800px;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1;   
   }
-
-  .carousel {
-    height: 500px;
+  .wrapper {
+    max-width:200px;
+    width:75%;
   }
-  .carousel-inner {
-    height: 100%;
-  }
-  
-  .carousel-1 {
-    height: 100%;
-
-    -webkit-background-size: cover;
-    background-size: cover;
-  }
-  
-  .carousel-2 {
-    height: 100%;
-
-    -webkit-background-size: cover;
-    background-size: cover;
-  } */

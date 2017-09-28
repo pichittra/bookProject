@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,AfterViewChecked} from '@angular/core';
 import { FrontService } from '../../services/front.service';
+declare var $: any;
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
