@@ -56,8 +56,9 @@ export class UpdateBookComponent implements OnInit {
 
   updateBook(book) {
     console.log(book);
-    this.book = this.backService.addBook(book);
-    console.log(this.book)
+    this.backService.addBook(book).subscribe(res => {
+      this.book = res;
+    });
   }
 
 }
