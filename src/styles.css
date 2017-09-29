@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/* button previous - next head img */
+.slick-prev:before, .slick-next:before{
+    color: #343a40 !important
+  }

@@ -9,14 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Http, HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
-import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
 import { CategoryComponent } from './components/category/category.component';
 import {TruncatePipe} from './truncate';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import {DatePickerModule} from 'ng2-datepicker-bootstrap';
 import { FormsModule, ReactiveFormsModule , FormControl  } from '@angular/forms';
+import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-carousel/slick-carousel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,9 @@ import { FormsModule, ReactiveFormsModule , FormControl  } from '@angular/forms'
     CategoryComponent,
     TruncatePipe,
     BookDetailComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    SlickCarouselComponent,
+    SlickCarouselItem 
   ],
   imports: [
     BrowserModule,
