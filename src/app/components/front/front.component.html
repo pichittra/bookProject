@@ -27,12 +27,12 @@
 
 
 
-        <slick-carousel class="carousel">
+        <slick-carousel class="carousel" [options]="optionsCarousel">
           <div slick-carousel-item *ngFor="let book of books" class="slide">
               <img style="height: 300px;width:100%;animation-timing-function: ease-in" src="{{book.imgHead}}"></div>
         </slick-carousel>
 
-        <!-- <slick-carousel class="slideSet">
-            <div slick-carousel-item *ngFor="let book of books" class="slide">
+        <!-- <slick-carousel class="slideSet" options="optionsSlideSet">
+            <div slick-carousel-item *ngFor="let book of books">
                 <img style="height: 300px;width:100%;animation-timing-function: ease-in" src="{{book.imgHead}}"></div>
           </slick-carousel> -->

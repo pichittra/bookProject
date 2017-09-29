@@ -1,4 +1,4 @@
-import { Component, OnInit ,AfterViewChecked} from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FrontService } from '../../services/front.service';
 // import * as jQuery from 'jquery';
 //import 'slick-carousel';
@@ -11,15 +11,14 @@ declare var $: any;
 export class FrontComponent implements OnInit {
 
   books: any;
+  optionsCarousel = {
+    centerMode: true,
+    autoplay: true,
+    arrows: true,
+    autoplaySpeed: 1500,
+    dots: true
+  };
   //category: any=[];
-  slides = [
-    { caption: "The Piper at the Gates of Dawn" },
-    { caption: "A Saucerful of Secrets" },
-    { caption: "Music from the Film More" },
-    { caption: "Ummagumma" },
-    { caption: "Atom Heart Mother" },
-    { caption: "Meddle" }
-  ];
   constructor(private frontService: FrontService) {
     this.frontService.getHeadBook().subscribe(res => {
       this.books = res;
@@ -29,7 +28,7 @@ export class FrontComponent implements OnInit {
   ngAfterViewChecked() {
 
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     $('.book-head').slick({
       dots: true,
       infinite: true,
@@ -38,7 +37,7 @@ export class FrontComponent implements OnInit {
     });
   }
   ngOnInit() {
- 
+
 
   }
   // showCategory(){

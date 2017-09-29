@@ -9,35 +9,33 @@ declare const $: any;
 export class SlickCarouselComponent implements OnInit {
 
   @Input() options: [any];
+  //@Input() optionsSlideSet: [any];
   constructor(private el: ElementRef, private zone: NgZone) { }
   slides = [];
   $carousel: any;
   $slideSet: any;
   ngOnInit() {
+    console.log(this.options)
   }
 
   initialized = false;
 
   initCarousel() {
-
+   
     this.zone.runOutsideAngular(() => {
-      this.$carousel = $(this.el.nativeElement).slick({
-        centerMode: true,
-        autoplay: true,
-        arrows: true,
-        autoplaySpeed: 1500,
-        dots: true,
-      });
+      this.$carousel = $(this.el.nativeElement).slick(
+        this.options
+      );
+      console.log(this.el)
 
-      // $('.slideSet').slick({
-      //   slidesToShow: 3,
-      //   slidesToScroll: 1,
+      // this.$slideSet = $(this.el.nativeElement).slick({
+      //   centerMode: true,
       //   autoplay: true,
-      //   autoplaySpeed: 2000,
+      //   arrows: true,
+      //   autoplaySpeed: 1500,
+      //   dots: true,
       // });
     });
-
- 
 
     this.initialized = true;
   }
@@ -45,16 +43,8 @@ export class SlickCarouselComponent implements OnInit {
   addSlide(slide) {
     console.log("addSlide");
     !this.initialized && this.initCarousel();
-    // this.slides.push(slide);
     this.$carousel.slick('slickAdd', slide.el.nativeElement);
- //   this.$slideSet.slick('slickAdd', slide.el.nativeElement);
   }
-
-  // removeSlide(slide) {
-  //   const idx = this.slides.indexOf(slide);
-  //   this.$carousel.slick('slickRemove', idx);
-  //   this.slides = this.slides.filter(s => s != slide);
-  // }
 }
 
 @Directive({
@@ -65,6 +55,7 @@ export class SlickCarouselItem {
   }
   ngAfterViewInit() {
     this.carousel.addSlide(this);
+   // console.log(this)
   }
   // ngOnDestroy() {
   //   this.carousel.removeSlide(this);
