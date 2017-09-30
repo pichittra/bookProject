@@ -6,7 +6,7 @@
 </slick-carousel>
 <!--show new book-->
 <hr>
-<div class="row">
+<div class="row" *ngIf="dataFront.newArrivals">
   <h4 class="display-4">New Arrivals</h4>
 </div>
 <div>
@@ -21,7 +21,7 @@
 </div>
 <!--Best Seller-->
 <hr>
-<div class="row">
+<div class="row" *ngIf="dataFront.bestSeller">
   <h4 class="display-4">Best Seller</h4>
 </div>
 <div>
