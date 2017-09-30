@@ -12,8 +12,16 @@
         <label for="isbn">ISBN : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="isbn" formControlName="isbn" [(ngModel)]='isbn' value="isbn" placeholder="ISBN" required>
+        <input type="text" class="form-control" name="isbn" formControlName="isbn" [(ngModel)]='isbn' value="isbn" placeholder="ISBN">
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="isbn" class="alert alert-danger">
+              ISBN is required
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -23,7 +31,15 @@
         <label for="bookName">Name : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="bookName" value="bookName" [(ngModel)]='bookName' formControlName="bookName" placeholder="Name Book" required>
+        <input type="text" class="form-control" name="bookName" value="bookName" [(ngModel)]='bookName' formControlName="bookName"
+          placeholder="Name Book">
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="bookName" class="alert alert-danger">
+              Name is required
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +51,14 @@
       </div>
       <div class="col-md-8">
         <input type="text" class="form-control" name="publisher" value="publisher" [(ngModel)]='publisher' formControlName="publisher"
-          placeholder="Name Publisher" required>
+          placeholder="Name Publisher">
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="publisher" class="alert alert-danger">
+              Publisher is required
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,8 +71,15 @@
       <div class="col-md-8">
         <div class="input-group">
           <span class="input-group-addon">Bath</span>
-          <input type="text" class="form-control" name="price" value="price" [(ngModel)]='price'  formControlName="price" required> 
+          <input type="text" class="form-control" name="price" value="price" [(ngModel)]='price' formControlName="price">
           <span class="input-group-addon">.00</span>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="price" class="alert alert-danger">
+              Price is required
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -64,6 +94,13 @@
         <select class="form-control" name="categoryName" [(ngModel)]='categoryName' formControlName="categoryName">
                 <option *ngFor="let item of category" value="{{item.id}}" >{{item.categoryName}}</option>
               </select>
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="categoryName" class="alert alert-danger">
+              Category is required
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -74,7 +111,14 @@
         <label for="detail">Detail : </label>
       </div>
       <div class="col-md-8">
-        <textarea class="form-control" name="detail" value="detail" [(ngModel)]='detail' formControlName="detail" rows="5" required></textarea>
+        <textarea class="form-control" name="detail" value="detail" [(ngModel)]='detail' formControlName="detail" rows="5"></textarea>
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="detail" class="alert alert-danger">
+              Detail is required
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -85,7 +129,15 @@
         <label for="category.quantity">Quantity : </label>
       </div>
       <div class="col-md-8">
-        <input type="number" class="form-control" name="quantity" value="quantity" [(ngModel)]='quantity' formControlName="quantity" placeholder="Quantity" required>
+        <input type="number" class="form-control" name="quantity" value="quantity" [(ngModel)]='quantity' formControlName="quantity"
+          placeholder="Quantity">
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="quantity" class="alert alert-danger">
+              Quantity is required
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -108,8 +160,16 @@
       </div>
       <div class="col-md-8">
         <div class="input-group">
-          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate| date: dd/MM/yyyy}}' type="text" name="dp" ngbDatepicker #d="ngbDatepicker">
+          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate| date}}' type="text"
+            name="dp" ngbDatepicker #d="ngbDatepicker">
           <button class="input-group-addon" (click)="d.toggle()" type="button"> <i class="fa fa-calendar" ></i></button>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div [hidden]="saleDate" class="alert alert-danger">
+              Sale Date is required
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -117,7 +177,7 @@
 
   <div class="row">
     <div class="col-md-12 text-center">
-      <button type="submit" class="btn btn-primary width-button">Save</button>
+      <button type="submit" class="btn btn-primary width-button" [disabled]="bookForm.invalid">Save</button>
       <button type="reset" class="btn btn-danger width-button">Cancle</button>
     </div>
   </div>

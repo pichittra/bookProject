@@ -4,6 +4,9 @@ import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import * as moment from 'moment'
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+// import { DatePipe } from '@angular/common';
+// import { DatePipe } from '../../../../node_modules/@angular/common';
+import { DatePipe } from '../../date-pipe';
 
 @Component({
   selector: 'app-update-book',
@@ -20,14 +23,14 @@ export class UpdateBookComponent implements OnInit {
   createForm() {
     this.bookForm = this.fb.group({
       id: 0,
-      categoryName: [''],
-      isbn: [''], // <--- the FormControl called "name"
-      bookName: [''],
-      publisher: [''],
-      price: [''],
-      detail: [''],
-      quantity: [''],
-      saleDate: [''],
+      categoryName: ['',Validators.required],
+      isbn: ['',Validators.required], // <--- the FormControl called "name"
+      bookName: ['',Validators.required],
+      publisher: ['',Validators.required],
+      price: ['',Validators.required],
+      detail: ['',Validators.required],
+      quantity: ['',Validators.required],
+      saleDate: ['',Validators.required],
       img: [''],
     });
   }
@@ -41,25 +44,13 @@ export class UpdateBookComponent implements OnInit {
       this.category = res;
     })
     this.createForm();
-    // this.bookForm.setValue({
-    //   id: 0,
-    //   isbn: this.category.book.isbn,
-    //   name: this.category.name,
-    //   publisher : this.category.publisher,
-    //   price: this.category.price,
-    //   detail: this.category.detail,
-    //   quantity : this.category.quantity,
-    //   saleDate: this.category.saleDate,
-    //   categoryName: this.category.categoryName,
-    //   img : this.category.img
-    // });
   }
 
   ngOnInit() {
   }
 
   updateBook(book) {
-    console.log(book)
+    //formate date
     let d = new Date(book.saleDate.year+"-"+book.saleDate.month+"-"+book.saleDate.day)
     let date = moment(d).format('YYYY-MM-DD')
 

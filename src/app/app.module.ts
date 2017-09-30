@@ -11,6 +11,7 @@ import { Http, HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
 import {TruncatePipe} from './truncate';
+import {DatePipe} from './date-pipe';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import {DatePickerModule} from 'ng2-datepicker-bootstrap';
@@ -23,6 +24,7 @@ import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-ca
     FrontComponent,
     CategoryComponent,
     TruncatePipe,
+    DatePipe,
     BookDetailComponent,
     UpdateBookComponent,
     SlickCarouselComponent,
