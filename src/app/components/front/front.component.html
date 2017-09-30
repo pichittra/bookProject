@@ -28,11 +28,22 @@
 
 
         <slick-carousel class="carousel" [options]="optionsCarousel">
-          <div slick-carousel-item *ngFor="let book of books" class="slide">
-              <img style="height: 300px;width:100%;animation-timing-function: ease-in" src="{{book.imgHead}}"></div>
+          <div slick-carousel-item *ngFor="let book of dataFront.imgHead" class="slide">
+              <img class="carousel-item-headImg mx-auto" src="{{book.imgHead}}"></div>
         </slick-carousel>
-
-        <!-- <slick-carousel class="slideSet" options="optionsSlideSet">
-            <div slick-carousel-item *ngFor="let book of books">
-                <img style="height: 300px;width:100%;animation-timing-function: ease-in" src="{{book.imgHead}}"></div>
-          </slick-carousel> -->
+<!-- <hr> -->
+<div class="card">
+  <div class="card-header">
+    <h4>New Arrivals</h4> 
+  </div>
+  <div class="card-block">
+    <!-- <h4 class="card-title">Special title treatment</h4> -->
+    <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <slick-carousel class="carousel" [options]="optionsSlideSet">
+      <div slick-carousel-item  *ngFor="let newBook of dataFront.newArrivals" class="slide">
+          <img class="carousel-item-slideSet mx-auto" src="{{newBook.img}}"></div>
+    </slick-carousel>
+  </div>
+</div>
+        

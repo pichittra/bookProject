@@ -11,31 +11,36 @@ declare var $: any;
 export class FrontComponent implements OnInit {
 
   books: any;
+  dataFront: any = [] ;
+
   optionsCarousel = {
     centerMode: true,
+   // cssEase: 'linear',
+    //variableWidth: true,
+    //variableHeight: true,
     autoplay: true,
     arrows: true,
     autoplaySpeed: 1500,
     dots: true
   };
+  optionsSlideSet = {
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    dots: true
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+  }
   //category: any=[];
   constructor(private frontService: FrontService) {
-    this.frontService.getHeadBook().subscribe(res => {
-      this.books = res;
-      console.log(this.books)
+   this.frontService.dataFront.subscribe(res => {
+           this.dataFront.menu = res[0];
+           this.dataFront.imgHead = res[1];
+           this.dataFront.newArrivals = res[2];
+           this.dataFront.bestSeller = res[3];    
+           console.log(this.dataFront)
     })
   }
-  ngAfterViewChecked() {
-
-  }
-  ngAfterViewInit() {
-    $('.book-head').slick({
-      dots: true,
-      infinite: true,
-      speed: 500,
-      cssEase: 'linear',
-    });
-  }
+ 
   ngOnInit() {
 
 

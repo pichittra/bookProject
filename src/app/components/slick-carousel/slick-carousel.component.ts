@@ -9,11 +9,12 @@ declare const $: any;
 export class SlickCarouselComponent implements OnInit {
 
   @Input() options: [any];
-  //@Input() optionsSlideSet: [any];
+
   constructor(private el: ElementRef, private zone: NgZone) { }
+
   slides = [];
   $carousel: any;
-  $slideSet: any;
+  //$slideSet: any;
   ngOnInit() {
     console.log(this.options)
   }
@@ -25,9 +26,9 @@ export class SlickCarouselComponent implements OnInit {
     this.zone.runOutsideAngular(() => {
       this.$carousel = $(this.el.nativeElement).slick(
         this.options
+        
       );
-      console.log(this.el)
-
+     
       // this.$slideSet = $(this.el.nativeElement).slick({
       //   centerMode: true,
       //   autoplay: true,
