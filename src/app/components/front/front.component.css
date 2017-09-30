@@ -1,17 +1,17 @@
-.fade-in {
-    animation: fadeIn 0.5s;
+.display-4 {
+  font-size: xx-large;
 }
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    display: block;
-    height: 800px;
-    min-width: 100%;
-    width: 100%;
-    max-width: 100%;
-    line-height: 1;   
-  }
-  .wrapper {
-    max-width:200px;
-    width:75%;
-  }
+h6 {
+  font-size: 12px;
+  padding-left: 15px;
+}
+
+p {
+  font-size: 12px;
+  padding-left: 15px;
+  color: gray;
+  margin: 0px;
+}
+
 
  

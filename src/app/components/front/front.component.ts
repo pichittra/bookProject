@@ -15,9 +15,6 @@ export class FrontComponent implements OnInit {
 
   optionsCarousel = {
     centerMode: true,
-   // cssEase: 'linear',
-    //variableWidth: true,
-    //variableHeight: true,
     autoplay: true,
     arrows: true,
     autoplaySpeed: 1500,
@@ -26,13 +23,14 @@ export class FrontComponent implements OnInit {
   optionsSlideSet = {
     slidesToShow: 5,
     slidesToScroll: 5,
-    dots: true
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    dots: true,
+    infinite: true,
+    adaptiveHeight: true
   }
   //category: any=[];
   constructor(private frontService: FrontService) {
    this.frontService.dataFront.subscribe(res => {
+    // console.log(res)
            this.dataFront.menu = res[0];
            this.dataFront.imgHead = res[1];
            this.dataFront.newArrivals = res[2];
