@@ -9,10 +9,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.isbn">ISBN : </label>
+        <label for="isbn">ISBN : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="category.isbn" formControlName="isbn" value="category.isbn" placeholder="ISBN" required>
+        <input type="text" class="form-control" name="isbn" formControlName="isbn" [(ngModel)]='isbn' value="isbn" placeholder="ISBN" required>
       </div>
     </div>
   </div>
@@ -20,10 +20,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.name">Name : </label>
+        <label for="bookName">Name : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="category.name" value="category.name" formControlName="bookName" placeholder="Name Book" required>
+        <input type="text" class="form-control" name="bookName" value="bookName" [(ngModel)]='bookName' formControlName="bookName" placeholder="Name Book" required>
       </div>
     </div>
   </div>
@@ -31,10 +31,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.publisher">Publisher : </label>
+        <label for="publisher">Publisher : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="category.publisher" value="category.publisher" formControlName="publisher"
+        <input type="text" class="form-control" name="publisher" value="publisher" [(ngModel)]='publisher' formControlName="publisher"
           placeholder="Name Publisher" required>
       </div>
     </div>
@@ -48,7 +48,7 @@
       <div class="col-md-8">
         <div class="input-group">
           <span class="input-group-addon">Bath</span>
-          <input type="text" class="form-control" name="category.price" value="category.price" formControlName="price" required> 
+          <input type="text" class="form-control" name="price" value="price" [(ngModel)]='price'  formControlName="price" required> 
           <span class="input-group-addon">.00</span>
         </div>
       </div>
@@ -58,10 +58,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.categoryName">Category : </label>
+        <label for="categoryName">Category : </label>
       </div>
       <div class="col-md-8">
-        <select class="form-control" name="category.categoryName" formControlName="categoryName">
+        <select class="form-control" name="categoryName" [(ngModel)]='categoryName' formControlName="categoryName">
                 <option *ngFor="let item of category" value="{{item.id}}" >{{item.categoryName}}</option>
               </select>
       </div>
@@ -71,10 +71,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.detail">Detail : </label>
+        <label for="detail">Detail : </label>
       </div>
       <div class="col-md-8">
-        <textarea class="form-control" name="category.detail" value="category.detail" formControlName="detail" rows="5" required></textarea>
+        <textarea class="form-control" name="detail" value="detail" [(ngModel)]='detail' formControlName="detail" rows="5" required></textarea>
       </div>
     </div>
   </div>
@@ -85,7 +85,7 @@
         <label for="category.quantity">Quantity : </label>
       </div>
       <div class="col-md-8">
-        <input type="number" class="form-control" name="category.quantity" value="category.quantity" formControlName="quantity" placeholder="Quantity" required>
+        <input type="number" class="form-control" name="quantity" value="quantity" [(ngModel)]='quantity' formControlName="quantity" placeholder="Quantity" required>
       </div>
     </div>
   </div>
@@ -93,10 +93,10 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
-        <label for="category.img">Image : </label>
+        <label for="img">Image : </label>
       </div>
       <div class="col-md-8">
-        <input type="file" class="form-control-file" name="category.img" value="category.img" formControlName="img">
+        <input type="file" class="form-control-file" name="img" value="img" [(ngModel)]='img' formControlName="img">
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="col-md-8">
         <div class="input-group">
-          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate}}' type="text" data-date-format="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate| date: dd/MM/yyyy}}' type="text" name="dp" ngbDatepicker #d="ngbDatepicker">
           <button class="input-group-addon" (click)="d.toggle()" type="button"> <i class="fa fa-calendar" ></i></button>
         </div>
       </div>
