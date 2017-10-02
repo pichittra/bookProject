@@ -28,7 +28,7 @@ import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-ca
     BookDetailComponent,
     UpdateBookComponent,
     SlickCarouselComponent,
-    SlickCarouselItem 
+    SlickCarouselItem
   ],
   imports: [
     BrowserModule,

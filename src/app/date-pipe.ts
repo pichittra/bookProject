@@ -5,7 +5,5 @@ import {Pipe} from '@angular/core'
 })
 export class DatePipe {
   transform(value: string, args: string[])  {
-    //console.log(value)
-    //return
   }
 }

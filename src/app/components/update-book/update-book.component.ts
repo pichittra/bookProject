@@ -4,8 +4,7 @@ import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import * as moment from 'moment'
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
-// import { DatePipe } from '@angular/common';
-// import { DatePipe } from '../../../../node_modules/@angular/common';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '../../date-pipe';
 
 @Component({
@@ -18,7 +17,7 @@ export class UpdateBookComponent implements OnInit {
   bookForm: FormGroup;
   category: any;
   book: any;
-
+  saveSuccess: boolean;
 
   createForm() {
     this.bookForm = this.fb.group({
@@ -38,7 +37,8 @@ export class UpdateBookComponent implements OnInit {
   constructor(private fb: FormBuilder, 
     private frontService: FrontService,
     private backService: BackService,
-    private parserFormatter: NgbDateParserFormatter) {
+    private parserFormatter: NgbDateParserFormatter,
+    private router: Router) {
 
     this.frontService.getMenu().subscribe(res => {
       this.category = res;
@@ -66,7 +66,13 @@ export class UpdateBookComponent implements OnInit {
       img: book.img,
     }
     this.backService.addBook(this.book).subscribe(res => {
-      this.book = res;
+      //this.book = res;
+      if(res){
+        this.saveSuccess = true;
+      }else{
+        this.saveSuccess = false;
+      }
+      this.router.navigate([`/`]);
     });
   }
 

@@ -4,18 +4,28 @@
   </div>
 </div>
 <hr>
+<div class="alert alert-success" *ngIf="saveSuccess">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    <strong>Success!</strong>
+</div>
+<script>
+$('#myAlert').on('closed.bs.alert', function () {
+    // do something…
+  })</script>
 
-<form [formGroup]="bookForm" (ngSubmit)="updateBook(bookForm.value)">
+<form [formGroup]="bookForm" novalidate (ngSubmit)="updateBook(bookForm.value)">
   <div class="form-group">
     <div class="row">
       <div class="col-md-4">
         <label for="isbn">ISBN : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="isbn" formControlName="isbn" [(ngModel)]='isbn' value="isbn" placeholder="ISBN">
-        <div class="row">
+        <input type="text" class="form-control" name="isbn" formControlName="isbn" value="isbn" placeholder="ISBN">
+        <div class="row" *ngIf="bookForm.get('isbn').dirty && bookForm.get('isbn').invalid">
           <div class="col-md-12">
-            <div [hidden]="isbn" class="alert alert-danger">
+            <div [hidden]="isbn" class="alert alert-danger ng-invalid">
               ISBN is required
             </div>
           </div>
@@ -31,9 +41,8 @@
         <label for="bookName">Name : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="bookName" value="bookName" [(ngModel)]='bookName' formControlName="bookName"
-          placeholder="Name Book">
-        <div class="row">
+        <input type="text" class="form-control" name="bookName" value="bookName" formControlName="bookName" placeholder="Name Book">
+        <div class="row" *ngIf="bookForm.get('bookName').dirty && bookForm.get('bookName').invalid">
           <div class="col-md-12">
             <div [hidden]="bookName" class="alert alert-danger">
               Name is required
@@ -50,9 +59,8 @@
         <label for="publisher">Publisher : </label>
       </div>
       <div class="col-md-8">
-        <input type="text" class="form-control" name="publisher" value="publisher" [(ngModel)]='publisher' formControlName="publisher"
-          placeholder="Name Publisher">
-        <div class="row">
+        <input type="text" class="form-control" name="publisher" value="publisher" formControlName="publisher" placeholder="Name Publisher">
+        <div class="row" *ngIf="bookForm.get('publisher').dirty && bookForm.get('publisher').invalid">
           <div class="col-md-12">
             <div [hidden]="publisher" class="alert alert-danger">
               Publisher is required
@@ -71,10 +79,10 @@
       <div class="col-md-8">
         <div class="input-group">
           <span class="input-group-addon">Bath</span>
-          <input type="text" class="form-control" name="price" value="price" [(ngModel)]='price' formControlName="price">
+          <input type="text" class="form-control" name="price" value="price" formControlName="price">
           <span class="input-group-addon">.00</span>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="bookForm.get('price').dirty && bookForm.get('price').invalid">
           <div class="col-md-12">
             <div [hidden]="price" class="alert alert-danger">
               Price is required
@@ -91,10 +99,10 @@
         <label for="categoryName">Category : </label>
       </div>
       <div class="col-md-8">
-        <select class="form-control" name="categoryName" [(ngModel)]='categoryName' formControlName="categoryName">
+        <select class="form-control" name="categoryName" formControlName="categoryName">
                 <option *ngFor="let item of category" value="{{item.id}}" >{{item.categoryName}}</option>
               </select>
-        <div class="row">
+        <div class="row" *ngIf="bookForm.get('categoryName').dirty && bookForm.get('categoryName').invalid">
           <div class="col-md-12">
             <div [hidden]="categoryName" class="alert alert-danger">
               Category is required
@@ -111,8 +119,8 @@
         <label for="detail">Detail : </label>
       </div>
       <div class="col-md-8">
-        <textarea class="form-control" name="detail" value="detail" [(ngModel)]='detail' formControlName="detail" rows="5"></textarea>
-        <div class="row">
+        <textarea class="form-control" name="detail" value="detail" formControlName="detail" rows="5"></textarea>
+        <div class="row" *ngIf="bookForm.get('detail').dirty && bookForm.get('detail').invalid">
           <div class="col-md-12">
             <div [hidden]="detail" class="alert alert-danger">
               Detail is required
@@ -129,9 +137,8 @@
         <label for="category.quantity">Quantity : </label>
       </div>
       <div class="col-md-8">
-        <input type="number" class="form-control" name="quantity" value="quantity" [(ngModel)]='quantity' formControlName="quantity"
-          placeholder="Quantity">
-        <div class="row">
+        <input type="number" class="form-control" name="quantity" value="quantity" formControlName="quantity" placeholder="Quantity">
+        <div class="row" *ngIf="bookForm.get('quantity').dirty && bookForm.get('quantity').invalid">
           <div class="col-md-12">
             <div [hidden]="quantity" class="alert alert-danger">
               Quantity is required
@@ -148,7 +155,7 @@
         <label for="img">Image : </label>
       </div>
       <div class="col-md-8">
-        <input type="file" class="form-control-file" name="img" value="img" [(ngModel)]='img' formControlName="img">
+        <input type="file" class="form-control-file" name="img" value="img" formControlName="img">
       </div>
     </div>
   </div>
@@ -160,11 +167,11 @@
       </div>
       <div class="col-md-8">
         <div class="input-group">
-          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate| date}}' type="text"
-            name="dp" ngbDatepicker #d="ngbDatepicker">
+          <input class="form-control" formControlName="saleDate" [(ngModel)]='saleDate' value='{{saleDate| date}}' type="text" name="dp"
+            ngbDatepicker #d="ngbDatepicker">
           <button class="input-group-addon" (click)="d.toggle()" type="button"> <i class="fa fa-calendar" ></i></button>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="bookForm.get('saleDate').dirty && bookForm.get('saleDate').invalid">
           <div class="col-md-12">
             <div [hidden]="saleDate" class="alert alert-danger">
               Sale Date is required
