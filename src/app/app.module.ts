@@ -17,7 +17,8 @@ import { UpdateBookComponent } from './components/update-book/update-book.compon
 import {DatePickerModule} from 'ng2-datepicker-bootstrap';
 import { FormsModule, ReactiveFormsModule , FormControl  } from '@angular/forms';
 import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-carousel/slick-carousel.component';
-
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { PdfViewComponent } from './components/pdf-view/pdf-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,9 @@ import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-ca
     BookDetailComponent,
     UpdateBookComponent,
     SlickCarouselComponent,
-    SlickCarouselItem
+    SlickCarouselItem,
+    PdfViewerComponent,
+    PdfViewComponent
   ],
   imports: [
     BrowserModule,
@@ -47,3 +50,4 @@ import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-ca
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//platformBrowserDynamic().bootstrapModule(AppModule);

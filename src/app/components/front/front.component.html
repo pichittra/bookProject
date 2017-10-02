@@ -1,37 +1,40 @@
 <!--Head-->
 <div *ngIf="dataFront">
-<slick-carousel class="carousel" [options]="optionsCarousel">
-  <div slick-carousel-item *ngFor="let book of dataFront.imgHead" class="slide">
-    <img class="carousel-item-headImg mx-auto" src="{{book.imgHead}}"></div>
-</slick-carousel>
-<!--show new book-->
-<hr>
-<div class="row" *ngIf="dataFront.newArrivals">
-  <h4 class="display-4">New Arrivals</h4>
-</div>
-<div>
-  <slick-carousel class="carousel" [options]="optionsSlideSet">
-    <div slick-carousel-item *ngFor="let newArrival of dataFront.newArrivals" class="slide">
-      <img class="carousel-item-slideSet mx-auto" src="{{newArrival.img}}">
-      <h6>{{newArrival.bookName}}</h6>
-      <p>{{newArrival.publisher}}</p>
-      <p>{{newArrival.price}} บาท</p>
-    </div>
+  <slick-carousel class="carousel" [options]="optionsCarousel">
+    <div slick-carousel-item *ngFor="let book of dataFront.imgHead" class="slide">
+      <img class="carousel-item-headImg mx-auto" src="{{book.imgHead}}"></div>
   </slick-carousel>
+  <!--show new book-->
+  <hr>
+  <div class="row" *ngIf="dataFront.newArrivals">
+    <h4 class="display-4">New Arrivals</h4>
+  </div>
+  <div>
+    <slick-carousel class="carousel" [options]="optionsSlideSet">
+      <div slick-carousel-item *ngFor="let newArrival of dataFront.newArrivals" class="slide">
+        <img class="carousel-item-slideSet mx-auto" src="{{newArrival.img}}">
+        <h6>{{newArrival.bookName}}</h6>
+        <p>{{newArrival.publisher}}</p>
+        <p>{{newArrival.price}} บาท</p>
+      </div>
+    </slick-carousel>
+  </div>
+  <!--Best Seller-->
+  <hr>
+  <div class="row" *ngIf="dataFront.bestSeller">
+    <h4 class="display-4">Best Seller</h4>
+  </div>
+  <div>
+    <slick-carousel class="carousel" [options]="optionsSlideSet">
+      <div slick-carousel-item *ngFor="let bestSale of dataFront.bestSeller" class="slide">
+        <img class="carousel-item-slideSet mx-auto" src="{{bestSale.img}}">
+        <h6>{{bestSale.bookName}}</h6>
+        <p>{{bestSale.publisher}}</p>
+        <p>{{bestSale.price}} บาท</p>
+      </div>
+    </slick-carousel>
+  </div>
 </div>
-<!--Best Seller-->
-<hr>
-<div class="row" *ngIf="dataFront.bestSeller">
-  <h4 class="display-4">Best Seller</h4>
-</div>
-<div>
-  <slick-carousel class="carousel" [options]="optionsSlideSet">
-    <div slick-carousel-item *ngFor="let bestSale of dataFront.bestSeller" class="slide">
-      <img class="carousel-item-slideSet mx-auto" src="{{bestSale.img}}">
-      <h6>{{bestSale.bookName}}</h6>
-      <p>{{bestSale.publisher}}</p>
-      <p>{{bestSale.price}} บาท</p>
-    </div>
-  </slick-carousel>
-</div>
-</div>
+<!-- <div class="row">
+  <a href="https://gradcollege.okstate.edu/sites/default/files/PDF_linking.pdf">kkkkk</a>
+</div> -->

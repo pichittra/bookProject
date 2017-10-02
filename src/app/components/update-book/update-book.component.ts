@@ -68,9 +68,11 @@ export class UpdateBookComponent implements OnInit {
     this.backService.addBook(this.book).subscribe(res => {
       //this.book = res;
       if(res){
-        this.saveSuccess = true;
+        //this.saveSuccess = true;
+        alert("Success!");
+       
       }else{
-        this.saveSuccess = false;
+        confirm("Success!");
       }
       this.router.navigate([`/`]);
     });

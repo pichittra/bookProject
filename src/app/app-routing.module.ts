@@ -4,6 +4,7 @@ import { FrontComponent } from './components/front/front.component';
 import { CategoryComponent } from './components/category/category.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
+import { PdfViewComponent } from './components/pdf-view/pdf-view.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'updatebook',
         component: UpdateBookComponent
+    },
+    {
+        path: 'docs',
+        component: PdfViewComponent
     }
 ];
 
