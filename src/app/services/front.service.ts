@@ -14,11 +14,11 @@ export class FrontService {
       this.getHeadBook(),
       this.getNewArrivals(),
       this.getBestSeller()
-     ) 
-     console.log(this.dataFront)
-   }
- 
-   
+    )
+    console.log(this.dataFront)
+  }
+
+
   //show Menu(Category)
   getMenu(): Observable<any> {
     return this.http.get
@@ -50,7 +50,7 @@ export class FrontService {
   //show books with category
   getCategory(categoryId): Observable<any> {
     return this.http.get
-      (`http://localhost:3000/category/${categoryId}`)
+      (`http://localhost:3000/book?categoryId=${categoryId}`)
       .map((res: Response) => res.json());
   }
 

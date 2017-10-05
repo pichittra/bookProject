@@ -22,20 +22,10 @@ export class SlickCarouselComponent implements OnInit {
   initialized = false;
 
   initCarousel() {
-   
     this.zone.runOutsideAngular(() => {
       this.$carousel = $(this.el.nativeElement).slick(
-        this.options
-        
+        this.options    
       );
-     
-      // this.$slideSet = $(this.el.nativeElement).slick({
-      //   centerMode: true,
-      //   autoplay: true,
-      //   arrows: true,
-      //   autoplaySpeed: 1500,
-      //   dots: true,
-      // });
     });
 
     this.initialized = true;

@@ -3,8 +3,14 @@
   <input type="text" placeholder="PDF src" [(ngModel)]="pdfSrc">
 </div>
 
-<pdf-viewer [src]="pdfSrc" 
+<pdf-viewer class="animate" [src]="pdfSrc" 
             [render-text]="true" 
             style="display: block;" 
+            [show-all]="true"
+            (after-load-complete)="callBackFn($event)"
 >
 </pdf-viewer>
+
+<!-- <script >
+  $('pdf-viewer').pdfFlipbook();</script>
+</script> -->

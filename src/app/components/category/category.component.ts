@@ -14,12 +14,15 @@ export class CategoryComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.frontService.getCategory(+params.get('categoryId')))
-      .subscribe(category => this.category = category);
+          .switchMap((params: ParamMap) => 
+          this.frontService.getCategory(+params.get('categoryId')))
+          .subscribe(
+            category => this.category = category
+          );
   }
   ngOnInit() {
   }
-  getDetailBook(item){
+  getDetailBook(item) {
     //console.log(item)
     this.frontService.showDetail(item);
     this.router.navigate(['/detail']);
