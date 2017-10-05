@@ -6,12 +6,47 @@
   <div class="col-md-7">
     <h4 class="padding" style="color:grey;">BOOK DETAIL</h4>
   </div>
-  <div class="col-md-5 text-right">
-    <i class="fa fa-star-o" (click)="vote(1)"></i>
-    <i class="fa fa-star-o" (click)="vote(2)"></i>
-    <i class="fa fa-star-o" (click)="vote(3)"></i>
-    <i class="fa fa-star-o" (click)="vote(4)"></i>
-    <i class="fa fa-star-o" (click)="vote(5)"></i>
+  <div class="col-md-5 text-right" *ngIf="!detail.score">
+    <i class="fa fa-star-o" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  </div>
+  <div class="col-md-5 text-right" *ngIf="detail.score==1">
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  </div>
+  <div class="col-md-5 text-right" *ngIf="detail.score==2">
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  </div>
+  <div class="col-md-5 text-right" *ngIf="detail.score==3">
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  </div>
+  <div class="col-md-5 text-right" *ngIf="detail.score==4">
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  </div>
+  <div class="col-md-5 text-right" *ngIf="detail.score==5">
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
+    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,5)"></i>
   </div>
 </div>
 <hr>
