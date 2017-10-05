@@ -9,11 +9,6 @@ export class TruncatePipe {
     //  let trail = '...';
     let limit = args ? parseInt(args, 15) : 15;
     let trail = '...';
-
-     console.log(value)
-     console.log(value.length)
-     console.log(args)
-    //let limit = value.length > 1 ? value[1] : '...';
     return value.length > limit ? value.substring(0, limit) + trail : value;
   }
 }

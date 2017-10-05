@@ -55,7 +55,12 @@ export class FrontService {
   }
 
   // show book 1
-  showDetail(item) {
-    this.detailBook = item;
+  // showDetail(item) {
+  //   this.detailBook = item;
+  // }
+  showDetail(bookId) : Observable<any> {
+    return this.http.get
+    (`http://localhost:3000/book/${bookId}`)
+    .map((res: Response) => res.json());
   }
 }

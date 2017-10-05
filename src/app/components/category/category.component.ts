@@ -22,10 +22,8 @@ export class CategoryComponent implements OnInit {
   }
   ngOnInit() {
   }
-  getDetailBook(item) {
-    //console.log(item)
-    this.frontService.showDetail(item);
-    this.router.navigate(['/detail']);
+  getDetailBook(id) {
+    this.router.navigate(['/detail',id]);
   }
 }
 

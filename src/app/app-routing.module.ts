@@ -16,7 +16,7 @@ const routes: Routes = [
         component: CategoryComponent
     },
     {
-        path: 'detail',
+        path: 'detail/:bookId',
         component: BookDetailComponent
     },
     {

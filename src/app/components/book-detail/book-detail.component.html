@@ -2,31 +2,28 @@
   {{detail.isbn}}
 </p> -->
 <br>
-<div class="row">
+<div class="row" >
   <div class="col-md-7">
     <h4 class="padding" style="color:grey;">BOOK DETAIL</h4>
   </div>
   <div class="col-md-5 text-right">
-    <i class="fa fa-star-o"></i>
-    <i class="fa fa-star-o"></i>
-    <i class="fa fa-star-o"></i>
-    <i class="fa fa-star-o"></i>
-    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o" (click)="vote(1)"></i>
+    <i class="fa fa-star-o" (click)="vote(2)"></i>
+    <i class="fa fa-star-o" (click)="vote(3)"></i>
+    <i class="fa fa-star-o" (click)="vote(4)"></i>
+    <i class="fa fa-star-o" (click)="vote(5)"></i>
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col-md-5">
-    <img class="card-img-bottom padding" src="{{detail.img}}" style="width:300px;height:400px">
+    <img class="card-img-bottom padding" src="{{detail?.img}}" style="width:300px;height:400px">
   </div>
 
   <div class="col-md-7">
-    <!-- <div class="row">
-      <h3> {{detail.bookName}} </h3>
-    </div> -->
     <div class="card border-light">
       <div class="card-header bg-transparent border-light">
-        <h5> {{detail.bookName}} </h5>
+        <h5> {{detail?.bookName}} </h5>
       </div>
       <div class="card-body">
         <!-- <h4 class="card-title">Success card title</h4> -->
@@ -38,7 +35,7 @@
                 <h6>ISBN : </h6>
               </div>
               <div class="col-md-8">
-                <p> {{detail.isbn}} </p>
+                <p> {{detail?.isbn}} </p>
               </div>
             </div>
           </div>
@@ -51,7 +48,7 @@
                 <h6>Publisher : </h6>
               </div>
               <div class="col-md-8">
-                <p> {{detail.publisher}} </p>
+                <p> {{detail?.publisher}} </p>
               </div>
             </div>
           </div>
@@ -64,7 +61,7 @@
                 <h6>Price : </h6>
               </div>
               <div class="col-md-8">
-                <p> {{detail.price}} </p>
+                <p> {{detail?.price}} </p>
               </div>
             </div>
           </div>
@@ -91,7 +88,7 @@
 <hr>
 <div class="row">
   <div class="col-md-12">
-    <p>{{detail.detail}}</p>
+    <p>{{detail?.detail}}</p>
   </div>
 </div>
 
