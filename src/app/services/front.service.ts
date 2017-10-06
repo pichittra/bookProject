@@ -15,7 +15,6 @@ export class FrontService {
       this.getNewArrivals(),
       this.getBestSeller()
     )
-    console.log(this.dataFront)
   }
 
 
@@ -46,18 +45,12 @@ export class FrontService {
       (`http://localhost:3000/bestSeller`)
       .map((res: Response) => res.json());
   }
-
   //show books with category
   getCategory(categoryId): Observable<any> {
     return this.http.get
       (`http://localhost:3000/book?categoryId=${categoryId}`)
       .map((res: Response) => res.json());
   }
-
-  // show book 1
-  // showDetail(item) {
-  //   this.detailBook = item;
-  // }
   showDetail(bookId) : Observable<any> {
     return this.http.get
     (`http://localhost:3000/book/${bookId}`)

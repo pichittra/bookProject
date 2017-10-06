@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , Output ,EventEmitter} from '@angular/core';
 import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router';
@@ -10,7 +10,9 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
 })
 export class BookDetailComponent implements OnInit {
  // detail: any;
+ category: any = [];
   @Input() detail: any;
+  @Output() score = new EventEmitter ();
   constructor(private frontService: FrontService,
     private backService: BackService,
     private route: ActivatedRoute) {
@@ -29,6 +31,12 @@ export class BookDetailComponent implements OnInit {
     this.backService.setScoreVote(this.route.snapshot.params['bookId'], this.detail)
       .subscribe(
       detail => this.detail = detail
+      );
+  }
+  scoreVote(book) {
+    this.backService.setScoreVote(this.route.snapshot.params['bookId'], book)
+      .subscribe(
+      detail => this.category = detail
       );
   }
 }

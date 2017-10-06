@@ -10,7 +10,7 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
 export class StarVoteComponent implements OnInit {
   @Input() data: any;
   @Output() score = new EventEmitter ();
-  detail: any;
+
   constructor(private frontService: FrontService,
     private backService: BackService,
     private route: ActivatedRoute) {

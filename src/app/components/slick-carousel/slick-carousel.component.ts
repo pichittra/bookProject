@@ -14,9 +14,7 @@ export class SlickCarouselComponent implements OnInit {
 
   slides = [];
   $carousel: any;
-  //$slideSet: any;
   ngOnInit() {
-    console.log(this.options)
   }
 
   initialized = false;
@@ -32,7 +30,6 @@ export class SlickCarouselComponent implements OnInit {
   }
 
   addSlide(slide) {
-    console.log("addSlide");
     !this.initialized && this.initCarousel();
     this.$carousel.slick('slickAdd', slide.el.nativeElement);
   }
@@ -46,9 +43,5 @@ export class SlickCarouselItem {
   }
   ngAfterViewInit() {
     this.carousel.addSlide(this);
-   // console.log(this)
   }
-  // ngOnDestroy() {
-  //   this.carousel.removeSlide(this);
-  // }
 }

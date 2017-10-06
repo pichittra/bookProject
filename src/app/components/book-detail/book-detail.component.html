@@ -4,7 +4,7 @@
     <h4 class="padding" style="color:grey;">BOOK DETAIL</h4>
   </div>
   <div class="col-md-5 text-right">
-    <app-star-vote [data]="detail"></app-star-vote>
+    <app-star-vote [data]="detail" (score)="scoreVote($event)"></app-star-vote>
   </div>
 </div>
 <hr>
@@ -109,7 +109,7 @@
         <h3 class="text-center">{{detail?.score}}</h3>
         <h3 *ngIf="!detail.score" class="text-center">0</h3>
         <div>
-          <app-star-vote [data]="detail"></app-star-vote>
+          <app-star-vote [data]="detail" (score)="scoreVote($event)"></app-star-vote>
         </div>
       </div>
     </div>

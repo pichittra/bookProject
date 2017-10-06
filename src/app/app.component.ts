@@ -25,7 +25,6 @@ export class AppComponent {
   ngOnInit() {
   this.frontService.getMenu().subscribe(res => {
     this.categorys = res;
-    console.log(this.categorys);
   })
 }
 

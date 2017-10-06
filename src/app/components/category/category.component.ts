@@ -25,11 +25,10 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
   }
   onClick(event,book){
-    console.log("click")
-    console.log(book)
     this.router.navigate(['/detail',book.id]);
   }
   scoreVote(book) {
+    console.log(book)
     this.category.score = book;
     this.backService.setScoreVote(this.route.snapshot.params['bookId'], this.category)
       .subscribe(

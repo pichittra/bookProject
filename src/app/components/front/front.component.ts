@@ -12,7 +12,6 @@ export class FrontComponent implements OnInit {
 
   books: any;
   dataFront: any = [] ;
-
   optionsCarousel = {
     centerMode: true,
     autoplay: true,
@@ -27,27 +26,17 @@ export class FrontComponent implements OnInit {
     infinite: true,
     adaptiveHeight: true
   }
-  //category: any=[];
   constructor(private frontService: FrontService) {
    this.frontService.dataFront.subscribe(res => {
-    // console.log(res)
            this.dataFront.menu = res[0];
            this.dataFront.imgHead = res[1];
            this.dataFront.newArrivals = res[2];
            this.dataFront.bestSeller = res[3];    
-           console.log(this.dataFront)
     })
   }
- 
+
   ngOnInit() {
 
 
   }
-  // showCategory(){
-  //   this.frontService.getCategory().subscribe(res => {
-  //     this.category = res;
-  //     console.log(this.category);
-  //   })
-  // }
-
 }
