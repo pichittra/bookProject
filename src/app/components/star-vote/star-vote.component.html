@@ -1,44 +1,42 @@
-<!-- {{data.score}} -->
-
 <div *ngIf="!data?.score">
-  <i class="fa fa-star-o" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,5)"></i>
 </div>
 <div *ngIf="data?.score==1">
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,5)"></i>
 </div>
 <div *ngIf="data?.score==2">
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,5)"></i>
 </div>
 <div *ngIf="data?.score==3">
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,5)"></i>
 </div>
 <div *ngIf="data?.score==4">
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" (click)="vote(data,5)"></i>
 </div>
 <div *ngIf="data?.score==5">
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
-  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,5)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,1)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,2)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,3)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,4)"></i>
+  <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(data,5)"></i>
 </div>

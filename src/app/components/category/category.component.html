@@ -12,50 +12,8 @@
               <span class="detail-book">{{book.publisher}} </span><br>
               <span class="detail-book">Price : {{book.price}} </span><br>
               <div>
-                  <app-star-vote [data]="book"></app-star-vote>
+                  <app-star-vote [data]="book" (vote)="scoreVote($event)"></app-star-vote>
               </div>
-              <!-- <div *ngIf="!book.score">
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div *ngIf="book.score==1">
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div *ngIf="book.score==2">
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div *ngIf="book.score==3">
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div *ngIf="book.score==4">
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div *ngIf="book.score==5">
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-                <i class="fa fa-star-o" style="background-color:yellow"></i>
-              </div> -->
             </div>
             
         </div>

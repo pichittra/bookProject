@@ -9,8 +9,8 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit {
-  detail: any;
-  @Input() data: any;
+ // detail: any;
+  @Input() detail: any;
   constructor(private frontService: FrontService,
     private backService: BackService,
     private route: ActivatedRoute) {

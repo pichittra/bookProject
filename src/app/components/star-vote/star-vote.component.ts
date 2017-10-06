@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router';
@@ -9,24 +9,15 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
 })
 export class StarVoteComponent implements OnInit {
   @Input() data: any;
+  @Output() score = new EventEmitter ();
   detail: any;
   constructor(private frontService: FrontService,
     private backService: BackService,
     private route: ActivatedRoute) {
-    console.log(this.data)
-    // this.detail = this.route.paramMap
-    //   .switchMap((params: ParamMap) =>
-    //     this.frontService.showDetail(+params.get('bookId')))
-    //   .subscribe(
-    //   detail => this.detail = detail
-    //   );
   }
   vote(book, score) {
-    this.detail.score = score;
-    this.backService.setScoreVote(this.route.snapshot.params['bookId'], this.detail)
-      .subscribe(
-      detail => this.detail = detail
-      );
+     this.data.score = score;
+    this.score.emit(this.data);
   }
   ngOnInit() {
   }
