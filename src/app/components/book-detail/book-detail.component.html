@@ -1,52 +1,10 @@
-<!-- <p>
-  {{detail.isbn}}
-</p> -->
 <br>
 <div class="row" >
   <div class="col-md-7">
     <h4 class="padding" style="color:grey;">BOOK DETAIL</h4>
   </div>
-  <div class="col-md-5 text-right" *ngIf="!detail.score">
-    <i class="fa fa-star-o" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
-  </div>
-  <div class="col-md-5 text-right" *ngIf="detail.score==1">
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
-  </div>
-  <div class="col-md-5 text-right" *ngIf="detail.score==2">
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
-  </div>
-  <div class="col-md-5 text-right" *ngIf="detail.score==3">
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
-  </div>
-  <div class="col-md-5 text-right" *ngIf="detail.score==4">
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" (click)="vote(detail,5)"></i>
-  </div>
-  <div class="col-md-5 text-right" *ngIf="detail.score==5">
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,1)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,2)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,3)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,4)"></i>
-    <i class="fa fa-star-o" style="background-color:yellow" (click)="vote(detail,5)"></i>
+  <div class="col-md-5 text-right">
+    <app-star-vote></app-star-vote>
   </div>
 </div>
 <hr>
@@ -61,8 +19,6 @@
         <h5> {{detail?.bookName}} </h5>
       </div>
       <div class="card-body">
-        <!-- <h4 class="card-title">Success card title</h4> -->
-
         <div class="row" style="padding-top:20px">
           <div class="col-md-12">
             <div class="row">
@@ -105,7 +61,7 @@
       <div class="card-footer bg-transparent border-light">
         <div class="row">
           <div class="col-md-7">
-            <h6 style="padding-left:0px;">ต้องการซื้อฉบับนี้ ราคา {{detail.price}} บาท</h6>
+            <h6 style="padding-left:0px;">ต้องการซื้อฉบับนี้ ราคา {{detail?.price}} บาท</h6>
           </div>
           <div class="col-md-5 text-right">
             <button class="btn btn-primary" type="submit">
@@ -150,19 +106,12 @@
       </div>
       <div class="col-md-3">
         <p>Your Rating</p>
-        <h3 class="text-center">0</h3>
-        <i class="fa fa-star-o"></i>
-        <i class="fa fa-star-o"></i>
-        <i class="fa fa-star-o"></i>
-        <i class="fa fa-star-o"></i>
-        <i class="fa fa-star-o"></i>
+        <h3 class="text-center">{{detail?.score}}</h3>
+        <h3 *ngIf="!detail.score" class="text-center">0</h3>
+        <div>
+          <app-star-vote></app-star-vote>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="col-md-6">
-    <p>Rating</p>
-  </div> -->
-
-<!-- </div> -->

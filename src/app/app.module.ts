@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule , FormControl  } from '@angular/forms'
 import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-carousel/slick-carousel.component';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { PdfViewComponent } from './components/pdf-view/pdf-view.component';
+import { StarVoteComponent } from './components/star-vote/star-vote.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { PdfViewComponent } from './components/pdf-view/pdf-view.component';
     SlickCarouselComponent,
     SlickCarouselItem,
     PdfViewerComponent,
-    PdfViewComponent
+    PdfViewComponent,
+    StarVoteComponent
   ],
   imports: [
     BrowserModule,
