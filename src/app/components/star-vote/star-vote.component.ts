@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router';
@@ -8,17 +8,18 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
   styleUrls: ['./star-vote.component.css']
 })
 export class StarVoteComponent implements OnInit {
-
+  @Input() data: any;
   detail: any;
-  constructor(private frontService: FrontService, 
-     private backService: BackService,
+  constructor(private frontService: FrontService,
+    private backService: BackService,
     private route: ActivatedRoute) {
-    this.detail = this.route.paramMap
-      .switchMap((params: ParamMap) =>
-        this.frontService.showDetail(+params.get('bookId')))
-      .subscribe(
-      detail => this.detail = detail
-      );
+    console.log(this.data)
+    // this.detail = this.route.paramMap
+    //   .switchMap((params: ParamMap) =>
+    //     this.frontService.showDetail(+params.get('bookId')))
+    //   .subscribe(
+    //   detail => this.detail = detail
+    //   );
   }
   vote(book, score) {
     this.detail.score = score;

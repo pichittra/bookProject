@@ -24,8 +24,14 @@ export class CategoryComponent implements OnInit {
   }
   ngOnInit() {
   }
-  getDetailBook(book) {
+  getDetailBook(event , book) {
   //  this.data.emit(book);
+  console.log(event)
+  //  this.router.navigate(['/detail',event.id]);
+  }
+  onClick(event,book){
+    console.log("click")
+    console.log(book)
     this.router.navigate(['/detail',book.id]);
   }
 }

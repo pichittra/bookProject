@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FrontService } from '../../services/front.service';
 import { BackService } from '../../services/back.service';
 import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router';
@@ -10,6 +10,7 @@ import { RouterModule, ActivatedRoute, Router, ParamMap } from '@angular/router'
 })
 export class BookDetailComponent implements OnInit {
   detail: any;
+  @Input() data: any;
   constructor(private frontService: FrontService,
     private backService: BackService,
     private route: ActivatedRoute) {
