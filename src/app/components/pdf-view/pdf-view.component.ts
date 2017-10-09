@@ -9,6 +9,7 @@ export class PdfViewComponent implements OnInit {
 
   //pdfSrc: string = 'https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf';
   pdfSrc: string = 'http://www.originlab.com/pdfs/Origin_8.1_Getting_Started_Booklet.pdf';
+  page:number=5;
   constructor() { 
     $(document).ready(function(){
       $(".animate").click(function(){
@@ -19,7 +20,7 @@ export class PdfViewComponent implements OnInit {
   }
   callBackFn(pdf: any) {
     // do anything with "pdf"
-    alert("Success!");
+  //  alert("Success!");
  }
   ngOnInit() {
   }

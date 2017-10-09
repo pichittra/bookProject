@@ -26,13 +26,6 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit() {
   }
-  vote(book, score) {
-    this.detail.score = score;
-    this.backService.setScoreVote(this.route.snapshot.params['bookId'], this.detail)
-      .subscribe(
-      detail => this.detail = detail
-      );
-  }
   scoreVote(book) {
     this.backService.setScoreVote(this.route.snapshot.params['bookId'], book)
       .subscribe(

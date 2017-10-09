@@ -2,11 +2,17 @@
   <label>PDF src</label>
   <input type="text" placeholder="PDF src" [(ngModel)]="pdfSrc">
 </div>
+<div>
+  <label>Page:</label>
+  <input type="number" placeholder="Page" [(ngModel)]="page">
+</div>
 
 <pdf-viewer class="animate" [src]="pdfSrc" 
             [render-text]="true" 
             style="display: block;" 
             [show-all]="true"
+            [stick-to-page]="true"
+            [page]="page"
             (after-load-complete)="callBackFn($event)"
 >
 </pdf-viewer>
