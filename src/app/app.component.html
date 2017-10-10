@@ -1,3 +1,4 @@
+<div class="content">
 <div class="container">
   <div class="row">
     <div class="col-md col-md-12">
@@ -17,12 +18,13 @@
   
   <div class="row">
     <div class="col-md col-md-2">
-      <ul class="nav flex-column bg-faded">
+      <ul class="nav flex-column bg-faded" id="sidebar">
         <li class="nav-item" *ngFor="let category of categorys">
           <a class="nav-link" href="javascript:void(0)" [routerLink]="['/category',category.id]"> 
             {{category.categoryName}} </a>
         </li>
       </ul>
+ 
     </div>
 
     <div class="col-md col-md-10">
@@ -30,8 +32,5 @@
       </router-outlet>
     </div>
   </div>
-
-  <div class="row">
-
-  </div>
+</div>
 </div>

@@ -4,17 +4,6 @@
   </div>
 </div>
 <hr>
-<!-- <div class="alert alert-success" *ngIf="saveSuccess">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    <strong>Success!</strong>
-</div>
-<script>
-$('#myAlert').on('closed.bs.alert', function () {
-  <a class="nav-link" href="/"> </a>
-  })</script> -->
-
 <form [formGroup]="bookForm" novalidate (ngSubmit)="updateBook(bookForm.value)">
   <div class="form-group">
     <div class="row">

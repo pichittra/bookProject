@@ -1,9 +1,7 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm-3 margin-block" *ngFor="let book of category;let index=index">
-      <!-- <div class="card"  (click)="getDetailBook(book)"> -->
           <div class="card" (click)="onClick($event,book)">
         <div class="card-block" style="height:350px;">
-            <!-- <div class="card-header bg-transparent border-success"> {{book.bookName}} </div> -->
           <div class="card-body">
               <img class="card-img-bottom" src="{{book.img}}" style="width:170px;height:200px" >
             </div>
@@ -20,5 +18,32 @@
       </div>
      
     </div>
+  </div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+    <h1 class="heading">Bookshelf by NIDA</h1>
   </div>
-  <!-- <p class="overflow-ellipsis" style="white-space: nowrap;width: 200px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+  </div>
+<div class="row">
+    <div class="col-md-2 text-center bookshelf" *ngFor="let book of category;let index=index">
+      <div class="book-holder">
+          <div class="book">
+            <div class="book-cover">
+              <div >
+                <img class="card-img-bottom" style="width:100px;height:130px;" (click)="onClick($event,book)" src="{{book.img}}">
+              </div>
+            </div>
+            <!-- <div class="book-spine">
+              <h3> {{book.publisher}} </h3>
+            </div> -->
+          </div>
+
+      </div>
+      <hr class="shelf">
+     
+    </div>
+
+
+</div>
+</div>
