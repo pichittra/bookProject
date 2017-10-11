@@ -1,0 +1,51 @@
+
+.detail-book {
+    font-size: 13px; 
+    color: #9eb0c7;
+}
+.head-book{
+    font-size: 15px; 
+    color: black;
+}
+.margin-block{
+    margin-bottom: 15px;
+}
+.shelf{
+    border-top: 10px solid rgba(154, 71, 13, 0.93);
+}
+.heading{
+    color:#fff;
+    text-shadow: 1px 0px 5px #000;
+    padding-top:5%;
+    margin-bottom:5%;
+}
+.container {
+    background: #d7e1ee;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: -webkit-fill-available;
+}
+.bookshelf{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom:30px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.book-holder {
+    width: 100px;
+    display:inline-block;
+}
+
+.book-cover {
+    width: 100px;
+    height: 130px;
+}
+/* .book-cover .cover {
+    vertical-align: bottom;
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#FF5722', endColorstr='#FFEB3B', GradientType=0);
+    padding-top: 20px;
+    font-size: 22px;
+    position: relative;
+    border-radius: 0 10px 10px 0;
+} */

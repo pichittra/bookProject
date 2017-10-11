@@ -5,10 +5,14 @@
 .container {
     background-color: lightsteelblue;
 }
-.content{
-    background-color: steelblue;
+.content {
+    background-color: lightsteelblue;
+    height: auto;
 }
 
+/* html {
+    background-color: steelblue;
+} */
 /*Slide bar menu
 #sidebar {
     overflow: hidden;

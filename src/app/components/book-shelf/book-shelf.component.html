@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+    <h1 class="heading">Bookshelf by NIDA</h1>
+  </div>
+  </div>
+  
+<div class="row h-100" style="height:100%">
+    <div class="col-md-2 text-center bookshelf" *ngFor="let book of category;let index=index">
+      <div class="book-holder">
+          <div class="book">
+            <div class="book-cover">
+              <div >
+                <img class="card-img-bottom" style="width:100px;height:130px;" (click)="onClick($event,book)" src="{{book.img}}">
+              </div>
+            </div>
+            <!-- <div class="book-spine">
+              <h3> {{book.publisher}} </h3>
+            </div> -->
+          </div>
+
+      </div>
+      <hr class="shelf">
+     
+    </div>
+</div>
+</div>

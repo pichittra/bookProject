@@ -20,6 +20,7 @@ import { SlickCarouselComponent,SlickCarouselItem  } from './components/slick-ca
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { PdfViewComponent } from './components/pdf-view/pdf-view.component';
 import { StarVoteComponent } from './components/star-vote/star-vote.component';
+import { BookShelfComponent } from './components/book-shelf/book-shelf.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { StarVoteComponent } from './components/star-vote/star-vote.component';
     SlickCarouselItem,
     PdfViewerComponent,
     PdfViewComponent,
-    StarVoteComponent
+    StarVoteComponent,
+    BookShelfComponent
   ],
   imports: [
     BrowserModule,
