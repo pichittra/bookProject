@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-3 margin-block" *ngFor="let book of category;let index=index">
-          <div class="card" (click)="onClick($event,book)">
-        <div class="card-block" style="height:350px;">
+          <!-- <div class="card" > -->
+        <div class="card-block" (click)="onClick($event,book)" style="height:350px;">
           <div class="card-body">
               <img class="card-img-bottom" src="{{book.img}}" style="width:170px;height:200px" >
             </div>
@@ -15,7 +15,7 @@
             </div>
             
         </div>
-      </div>
+      <!-- </div> -->
      
     </div>
   </div>
